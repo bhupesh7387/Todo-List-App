@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ebebd3;
+  overflow-x: hidden;
+  background: url(./bg.jpg) center;
+  background-size: cover;
+}
+
+#heading {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-radius: 50rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+#heading h1 {
+  font-size: 5rem;
+}
+
+#heading img {
+  width: 75px;
+}
+
+#taskInpCont {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 85vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+}
+
+#taskInpCont #taskInp {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1rem;
+  font-size: 4rem;
+  background-color: rgba(255, 255, 255, 0.65);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  border-radius: 1rem;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#taskInpCont #taskInp::-webkit-input-placeholder {
+  color: rgba(53, 50, 50, 0.808);
+}
+
+#taskInpCont #taskInp:-ms-input-placeholder {
+  color: rgba(53, 50, 50, 0.808);
+}
+
+#taskInpCont #taskInp::-ms-input-placeholder {
+  color: rgba(53, 50, 50, 0.808);
+}
+
+#taskInpCont #taskInp::placeholder {
+  color: rgba(53, 50, 50, 0.808);
+}
+
+#taskInpCont #taskInp:focus + #taskInpShadow,
+#taskInpCont #taskInp:hover + #taskInpShadow {
+  opacity: 1;
+}
+
+#taskInpCont #addTask {
+  width: 5%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1rem;
+  font-size: 4rem;
+  background-color: black;
+  color: white;
+  font-weight: bolder;
+  border-radius: 1rem;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+#taskInpCont #taskInpShadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  -webkit-box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: opacity 0.4s ease-in;
+  transition: opacity 0.4s ease-in;
+}
+
+#tasksCont {
+  width: 90%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: rgba(255, 255, 255, 0.65);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  border-radius: 3rem;
+}
+
+#tasksCont:empty {
+  display: none;
+}
+
+#tasksCont #tasks:empty {
+  display: none;
+}
+
+#tasksCont .task {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.75);
+  color: black;
+  padding: 1rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+}
+
+#tasksCont .task:last-child {
+  margin-bottom: 0;
+}
+
+#tasksCont .task h2 {
+  text-align: center;
+  width: 100%;
+}
+
+.deleteTask {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+#taskCompletion {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: rgba(255, 0, 0, 0.65);
+  width: 80px;
+  height: 30px;
+  border-radius: 20px;
+  left: 100px;
+  -webkit-box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.8);
+          box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.8);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#taskCompletion::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: black;
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: left 0.5s ease;
+  transition: left 0.5s ease;
+}
+
+#taskCompletion:checked {
+  background-color: greenyellow;
+}
+
+#taskCompletion:checked::before {
+  left: 50px;
+}
+
+.deleteTaskAnimate {
+  -webkit-animation: deleteTask 0.75s ease-in;
+          animation: deleteTask 0.75s ease-in;
+}
+
+@-webkit-keyframes deleteTask {
+  100% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes deleteTask {
+  100% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */
